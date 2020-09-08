@@ -3,7 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - update-java-alternatives -l
+      - cat /etc/apt/sources.list
       - java -version
       - chmod +x ./gradlew
       - ./gradlew assembleDebug
