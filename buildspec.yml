@@ -6,9 +6,10 @@ phases:
       - apt-get update
       - apt-cache search ^openjdk
       - hg clone http://hg.openjdk.java.net/jdk9/jdk9
-      - cd jdk9
-      - chmod +x get_source.sh
-      - sh get_source.sh
+      - ls
+      - cd ./jdk9
+      - chmod +x ./get_source.sh
+      - sh ./get_source.sh
       - java -version
       - update-alternatives --config java
       - chmod +x ./gradlew
