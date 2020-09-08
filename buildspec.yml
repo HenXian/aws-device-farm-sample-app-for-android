@@ -15,7 +15,7 @@ phases:
       - cd ./build/linux-86_x64-normal-server-release/images/jdk
       - ls
       - echo $JAVA_HOME
-      - ls | sed "s:^:`pwd`/: "
+      - pwd
       - java -version
       - chmod +x ./gradlew
       - ./gradlew assembleDebug
