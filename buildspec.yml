@@ -7,6 +7,9 @@ phases:
       - cd ./jdk9
       - chmod +x ./get_source.sh
       - sh ./get_source.sh
+      - chmod +x ./configure
+      - sh ./configure --disable-warnings-as-errors --with-debug-level=slowdebug --with-native-debug-symbols=internal
+      - make images
       - java -version
       - chmod +x ./gradlew
       - ./gradlew assembleDebug
