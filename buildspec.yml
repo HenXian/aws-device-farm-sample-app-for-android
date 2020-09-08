@@ -3,15 +3,11 @@ version: 0.2
 phases:
   build:
     commands:
-      - apt-get update
-      - apt-cache search ^openjdk
       - hg clone http://hg.openjdk.java.net/jdk9/jdk9
-      - ls
       - cd ./jdk9
       - chmod +x ./get_source.sh
       - sh ./get_source.sh
       - java -version
-      - update-alternatives --config java
       - chmod +x ./gradlew
       - ./gradlew assembleDebug
 artifacts:
