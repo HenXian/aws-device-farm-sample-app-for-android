@@ -3,9 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - apt-get update
-      - apt-cache search openjdk
-      - apt-get install openjdk-8-jdk openjdk-8-jdk-headless -y
+      - update-java-alternatives -l
       - java -version
       - chmod +x ./gradlew
       - ./gradlew assembleDebug
