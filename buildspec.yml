@@ -3,6 +3,9 @@ version: 0.2
 phases:
   build:
     commands:
+      - apt-get update
+      - apt-get install openjdk-9-jre openjdk-9-jdk
+      - java -version
       - chmod +x ./gradlew
       - ./gradlew assembleDebug
 artifacts:
