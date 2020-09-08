@@ -16,6 +16,8 @@ phases:
       - cd ./build/linux-86_x64-normal-server-release/images/jdk
       - ls
       - echo $JAVA_HOME
+      - echo "JAVA_HOME=/codebuild/output/src479521443/src/jdk9/build/linux-86_x64-normal-server-release/images/jdk/" >> /etc/environment
+      - source /etc/environment
       - java -version
       - chmod +x ./gradlew
       - ./gradlew assembleDebug
