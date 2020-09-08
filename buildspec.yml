@@ -6,7 +6,7 @@ phases:
       - apt-get update
       - apt-cache search ^openjdk
       - java -version
-      - update-alternatives –config java
+      - update-alternatives --config java
       - chmod +x ./gradlew
       - ./gradlew assembleDebug
 artifacts:
