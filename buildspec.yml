@@ -5,13 +5,12 @@ phases:
     commands:
       - apt-get update
       - apt-cache search ^openjdk
-      - java -version
-      - update-alternatives --config java
-      - update-java-alternatives -l
       - hg clone http://hg.openjdk.java.net/jdk9/jdk9
       - cd jdk9
       - chmod +x get_source.sh
       - sh get_source.sh
+      - java -version
+      - update-alternatives --config java
       - chmod +x ./gradlew
       - ./gradlew assembleDebug
 artifacts:
