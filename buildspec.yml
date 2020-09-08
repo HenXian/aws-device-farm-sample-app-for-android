@@ -4,14 +4,8 @@ phases:
   build:
     commands:
       - apt-get update
-      - apt-get install mercurial -y
-      - mkdir ~/openJDK9SourceCode
-      - cd ~/openJDK9SourceCode
-      - hg clone http://hg.openjdk.java.net/jdk9/dev 9dev
-      - cd 9dev
-      - chmod +x ./get_source.sh
-      - sh ./get_source.sh
-      - apt-get install openjdk-8-jdk-headless -y
+      - apt-get install openjdk-9-jdk-headless -y
+      - apt-get install openjdk-9-jdk -y
       - java -version
       - chmod +x ./gradlew
       - ./gradlew assembleDebug
