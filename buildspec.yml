@@ -13,9 +13,11 @@ phases:
       - chmod +x ./configure
       - sh ./configure --disable-warnings-as-errors --with-debug-level=slowdebug --with-native-debug-symbols=internal
       - make images
-      - cd ./build/linux-86_x64-normal-server-release/images/jdk
+      - ls -l
+      - ls ./build
+      - cd ./build/linux-x86_64-normal-server-slowdebug/images/jdk
       - echo $JAVA_HOME
-      - echo "JAVA_HOME=/codebuild/output/src479521443/src/jdk9/build/linux-86_x64-normal-server-release/images/jdk/" >> /etc/environment
+      - echo "JAVA_HOME=/codebuild/output/src924109731/src/jdk9/build/linux-x86_64-normal-server-slowdebug/images/jdk/" >> /etc/environment
       - source /etc/environment
       - echo $JAVA_HOME
       - java -version
