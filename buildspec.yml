@@ -4,7 +4,7 @@ phases:
   build:
     commands:
       - apt-get update
-      - apt-get -y install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev libcups2-dev
+      - apt-get -y install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev libcups2-dev libasound2-dev
       - pwd
       - hg clone http://hg.openjdk.java.net/jdk9/jdk9
       - cd ./jdk9
@@ -14,10 +14,10 @@ phases:
       - sh ./configure --disable-warnings-as-errors --with-debug-level=slowdebug --with-native-debug-symbols=internal
       - make images
       - cd ./build/linux-86_x64-normal-server-release/images/jdk
-      - ls
       - echo $JAVA_HOME
       - echo "JAVA_HOME=/codebuild/output/src479521443/src/jdk9/build/linux-86_x64-normal-server-release/images/jdk/" >> /etc/environment
       - source /etc/environment
+      - echo $JAVA_HOME
       - java -version
       - chmod +x ./gradlew
       - ./gradlew assembleDebug
